@@ -5,6 +5,7 @@ theme: "PaperMod"
 
 params:
   ShowShareButtons: false
+  ShowReadingTime: true
   socialIcons:
     - name: github
       url: "https://github.com/yleprince"

@@ -1,6 +1,8 @@
 ---
-title: "How to Start a Blog"
+title: "Get Started Blogging"
 date: 2022-12-24T00:22:47Z
+summary: "A Step-by-Step Guide to Setting Up Your Own Blog"
+author: "Yrieix Leprince"
 ---
 
 Are you thinking about starting a blog? Whether you want to share your thoughts, ideas, or experiences with a wider audience, blogging can be a fun and rewarding way to express yourself and connect with others. In this article, we will walk you through the steps of starting a blog, from choosing a platform to writing and publishing content. We'll also provide some helpful resources and tips to get you started and on your way to building a successful blog. So, if you're ready to start sharing your voice with the world, let's get started!
