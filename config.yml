@@ -4,15 +4,44 @@ title: "Yrieix's blog"
 theme: "PaperMod"
 
 params:
-  ShowShareButtons: true
+  ShowShareButtons: false
   socialIcons:
     - name: github
       url: "https://github.com/yleprince"
     - name: linkedin
       url: "https://www.linkedin.com/in/yrieixleprince/"
 
+  profileMode:
+    enabled: true
+    title: Yrieix Leprince
+    subtitle: "*A good programmer is someone who always looks both ways before crossing a one-way street.* - Doug Linder"
+    buttons:
+        - name: Posts
+          url: posts
+
 outputs:
   home:
     - HTML
     - RSS
     - JSON # is necessary
+
+languages:
+    en:
+        languageName: "English"
+        weight: 1
+        taxonomies:
+          category: categories
+          tag: tags
+          series: series
+        menu:
+            main:
+                - name: Search
+                  url: search/
+                  weight: 10
+                - name: Tags
+                  url: tags/
+                  weight: 10
+                - name: Posts
+                  url: posts/
+                  weight: 10
+
