@@ -1,7 +1,6 @@
 ---
 title: "Intro to Scala"
 date: 2022-12-25T09:39:15Z
-draft: true
 ---
 
 Scala is a modern, general-purpose programming language that runs on the Java Virtual Machine (JVM). It was first released in 2004 and has gained a lot of popularity among developers due to its concise, expressive syntax and support for both object-oriented and functional programming paradigms.
