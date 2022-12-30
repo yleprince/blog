@@ -1,12 +1,14 @@
 baseURL: "https://blog.yrieix.com"
 languageCode: en-us
 title: "Yrieix's blog"
-theme: "PaperMod"
+theme: "PaperModX"
 
 params:
   ShowShareButtons: false
   ShowReadingTime: true
   ShowBreadCrumbs: true
+  showtoc: true
+  tocopen: true
   socialIcons:
     - name: github
       url: "https://github.com/yleprince"
