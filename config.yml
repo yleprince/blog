@@ -1,6 +1,6 @@
 baseURL: "https://blog.yrieix.com"
 languageCode: en-us
-title: "Yrieix's blog"
+title: "Yrieix Leprince"
 theme: "PaperModX"
 
 params:
@@ -17,7 +17,7 @@ params:
 
   profileMode:
     enabled: true
-    title: Yrieix Leprince
+    title: 👋 Hello world
     subtitle: "*A good programmer is someone who always looks both ways before crossing a one-way street.* - Doug Linder"
     buttons:
         - name: Posts
