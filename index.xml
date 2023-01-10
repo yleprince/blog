@@ -507,7 +507,7 @@ With case classes, you can define simple classes that have a useful <code>toStri
 and you can use them in pattern matching to write expressive, powerful code.</p>
 <p>As you continue to work with Scala, case classes will become an essential tool in your toolbox, so it is a good idea to get familiar with them early on.</p>
 <hr>
-<h2 id="case-class-vs-case-object"><code>case class</code> vs <code>case object</code></h2>
+<h3 id="comparison-case-class-vs-case-object">Comparison <code>case class</code> vs <code>case object</code></h3>
 <p>The main differences between <code>case class</code> and <code>case object</code> are:</p>
 <ul>
 <li>
@@ -522,10 +522,10 @@ and you can use them in pattern matching to write expressive, powerful code.</p>
 </li>
 <li>
 <ol start="3">
-<li><code>case class</code> instances are compared by value while <code>case objects</code> are compared by reference.
-Both are used in pattern matching but <code>case class</code> instances are used more frequently in pattern matching.
-👉 You should use <code>case class</code> if you want to define a class with data, and you should use <code>case object</code> if you want to define a singleton object with no data.</li>
+<li><code>case class</code> instances are compared by value while <code>case objects</code> are compared by reference.</li>
 </ol>
 </li>
 </ul>
+<p>Both are used in pattern matching but <code>case class</code> instances are used more frequently in pattern matching.</p>
+<p>👉 You should use <code>case class</code> if you want to define a class with data, and you should use <code>case object</code> if you want to define a singleton object with no data.</p>
 ]]></content:encoded></item></channel></rss>
