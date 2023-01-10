@@ -70,11 +70,13 @@ As you continue to work with Scala, case classes will become an essential tool i
 
 ----
 
-## `case class` vs `case object`
+### Comparison `case class` vs `case object`
 
 The main differences between `case class` and `case object` are:
 - 1. `case class` has constructor parameters and `case object` doesn't have.
 - 2. `case class` creates instances while `case object` creates singleton instances
 - 3. `case class` instances are compared by value while `case objects` are compared by reference.
+
 Both are used in pattern matching but `case class` instances are used more frequently in pattern matching.
+
 👉 You should use `case class` if you want to define a class with data, and you should use `case object` if you want to define a singleton object with no data.
