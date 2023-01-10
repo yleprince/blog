@@ -470,4 +470,62 @@ The <code>map</code> function is a higher-order function that takes a function a
 <p>In addition to these resources, you may also want to consider joining a community or forum for bloggers, such as ProBlogger or BlogHer, to connect with other bloggers and get advice and support. These communities can be a great source of inspiration, encouragement, and knowledge for bloggers at any stage of their journey.</p>
 <hr>
 <p>We hope this article has been helpful in guiding you through the process of starting a blog. With these steps and resources at your fingertips, you&rsquo;re well on your way to creating a successful and rewarding blog. Happy blogging!</p>
+]]></content:encoded></item><item><title>Scala `case classes` explained</title><link>https://blog.yrieix.com/posts/scala-case-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.yrieix.com/posts/scala-case-class/</guid><description>Description of case classes in scala</description><content:encoded><![CDATA[<p>Scala is a powerful programming language that is well-suited for building large, complex software systems.
+One of the features of Scala that makes it particularly well-suited for this task is its support for case classes.
+In this article, we&rsquo;ll take a closer look at case classes and how they can be used to write clean, maintainable code.</p>
+<p>At a high level, a <code>case class</code> is a special kind of class that is designed to be used in the context of pattern matching.
+A <code>case class</code> is defined using the <code>case</code> keyword, which automatically generates several useful things for you:</p>
+<ul>
+<li>A primary constructor, which defines the fields of the <code>case class</code>
+<code>equals</code> and <code>hashCode</code> methods that are based on value, not reference identity</li>
+<li>A <code>toString</code> method that provides a useful string representation of the <code>case class</code> instance
+copy method</li>
+<li>An <code>apply</code> method, which allows you to create an instance of the <code>case class</code> without using the <code>new</code> keyword.</li>
+<li>An <code>unapply</code> method, which allows the <code>case class</code> to be used in pattern matching.</li>
+</ul>
+<p>Here&rsquo;s an example of a <code>case class</code> definition:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Point</span><span style="color:#f92672">(</span>x<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">,</span> y<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Int</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>With this definition, you can create instances of the <code>case class</code> like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> p1 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Point</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> p2 <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Point</span><span style="color:#f92672">(</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>You can also access the fields of a <code>case class</code> instance using the dot notation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> x <span style="color:#66d9ef">=</span> p1<span style="color:#f92672">.</span>x
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> y <span style="color:#66d9ef">=</span> p1<span style="color:#f92672">.</span>y
+</span></span></code></pre></div><p>One of the most powerful features of case classes is that they can be used in pattern matching.
+Here&rsquo;s an example of how you might use a <code>case class</code> in a pattern match:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> point <span style="color:#66d9ef">=</span> <span style="color:#a6e22e">Point</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>point <span style="color:#66d9ef">match</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">Point</span><span style="color:#f92672">(</span>x<span style="color:#f92672">,</span> y<span style="color:#f92672">)</span> <span style="color:#66d9ef">=&gt;</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">s&#34;x = </span><span style="color:#e6db74">$x</span><span style="color:#e6db74">, y = </span><span style="color:#e6db74">$y</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">=&gt;</span> println<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Not a Point&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>The above pattern match will output &ldquo;x = 1, y = 2&rdquo;, because the point variable matches the pattern Point(x, y).</p>
+<p>Another feature of <code>case class</code> is <code>copy</code> method which is used to create a new instance of <code>case class</code> with some modifications to the original instance.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> p2 <span style="color:#66d9ef">=</span> p1<span style="color:#f92672">.</span>copy<span style="color:#f92672">(</span>x <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>p2 will be a new instance of Point class with value x = 3 and y = 2</p>
+<p>In summary, case classes are an incredibly powerful feature of Scala that makes it easy to write code that is both clean and maintainable.
+With case classes, you can define simple classes that have a useful <code>toString</code> representation,
+and you can use them in pattern matching to write expressive, powerful code.</p>
+<p>As you continue to work with Scala, case classes will become an essential tool in your toolbox, so it is a good idea to get familiar with them early on.</p>
+<hr>
+<h2 id="case-class-vs-case-object"><code>case class</code> vs <code>case object</code></h2>
+<p>The main differences between <code>case class</code> and <code>case object</code> are:</p>
+<ul>
+<li>
+<ol>
+<li><code>case class</code> has constructor parameters and <code>case object</code> doesn&rsquo;t have.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><code>case class</code> creates instances while <code>case object</code> creates singleton instances</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li><code>case class</code> instances are compared by value while <code>case objects</code> are compared by reference.
+Both are used in pattern matching but <code>case class</code> instances are used more frequently in pattern matching.
+👉 You should use <code>case class</code> if you want to define a class with data, and you should use <code>case object</code> if you want to define a singleton object with no data.</li>
+</ol>
+</li>
+</ul>
 ]]></content:encoded></item></channel></rss>
