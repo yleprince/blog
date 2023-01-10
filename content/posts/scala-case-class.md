@@ -1,6 +1,6 @@
 ---
 title: "Scala `case classes` explained"
-date: 2022-01-10T017:00:47Z
+date: 2023-01-10T017:00:47Z
 summary: "Description of case classes in scala"
 author: chat-gpt
 showToc: true
