@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Yrieix Leprince</title><link>https://blog.yrieix.com/</link><description>Recent content on Yrieix Leprince</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 25 Dec 2022 09:39:15 +0000</lastBuildDate><atom:link href="https://blog.yrieix.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Intro to Scala</title><link>https://blog.yrieix.com/posts/intro-to-scala/</link><pubDate>Sun, 25 Dec 2022 09:39:15 +0000</pubDate><guid>https://blog.yrieix.com/posts/intro-to-scala/</guid><description>Scala: A powerful language for building scalable applications.</description><content:encoded><![CDATA[<p>Scala is a modern, general-purpose programming language that runs on the Java Virtual Machine (JVM). It was first released in 2004 and has gained a lot of popularity among developers due to its concise, expressive syntax and support for both object-oriented and functional programming paradigms.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Yrieix Leprince</title><link>https://blog.yrieix.com/</link><description>Recent content on Yrieix Leprince</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 30 Jan 2023 12:54:48 +0000</lastBuildDate><atom:link href="https://blog.yrieix.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Scala Annotations</title><link>https://blog.yrieix.com/posts/scala-annotations/</link><pubDate>Mon, 30 Jan 2023 12:54:48 +0000</pubDate><guid>https://blog.yrieix.com/posts/scala-annotations/</guid><description>What are annotations in scala? Annotations in Scala are metadata tags applied to declarations or expressions, which can be used by the Scala compiler, or a third-party tool. They can provide additional information or instructions to the compiler, or customize the generated code.
+Here are some common uses of annotations in Scala:
+Compiler checks: @unchecked, @deprecated, @inline Type-checking: @tailrec, @specialized Generating boilerplate code: @scala.reflect.BeanProperty, @getter, @setter Frameworks/libraries: @Path, @RequestMapping, @SpringBootApplication, etc.</description><content:encoded><![CDATA[<h2 id="what-are-annotations-in-scala">What are annotations in scala?</h2>
+<p>Annotations in Scala are metadata tags applied to declarations or expressions, which can be used by the Scala compiler, or a third-party tool.
+They can provide additional information or instructions to the compiler, or customize the generated code.</p>
+<p>Here are some common uses of annotations in Scala:</p>
+<ol>
+<li>Compiler checks: @unchecked, @deprecated, @inline</li>
+<li>Type-checking: @tailrec, @specialized</li>
+<li>Generating boilerplate code: @scala.reflect.BeanProperty, @getter, @setter</li>
+<li>Frameworks/libraries: @Path, @RequestMapping, @SpringBootApplication, etc.</li>
+</ol>
+<p>Annotations in Scala are denoted by the &lsquo;@&rsquo; symbol, followed by the name of the annotation and optional arguments within parentheses.</p>
+<p>For example the annotation @deprecated before a method causes the compiler to print a warning if the method is used.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">object</span> <span style="color:#a6e22e">DeprecationDemo</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">App</span><span style="color:#66d9ef">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">@deprecated</span><span style="color:#f92672">(</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#66d9ef">deprecation</span> <span style="color:#66d9ef">message</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#f92672">,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#66d9ef">release</span> <span style="color:#66d9ef">#</span> <span style="color:#66d9ef">which</span> <span style="color:#66d9ef">deprecates</span> <span style="color:#66d9ef">method</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> hello <span style="color:#66d9ef">=</span> <span style="color:#e6db74">&#34;hola&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      hello
+</span></span></code></pre></div><p>This will compile but the compiler will print a warning: “there was one deprecation warning”.</p>
+<p>An annotation clause applies to the first definition or declaration following it. More than one annotation clause may precede a definition and declaration. The order in which these clauses are given does not matter.</p>
+<h2 id="how-about-the-volatile-annotation">How about the <code>@volatile</code> annotation?</h2>
+<p>The <code>@volatile</code> annotation in Scala is used to declare a field as volatile.
+Volatile fields are special in that they can be read and written by multiple threads and provide visibility and ordering guarantees.
+When a field is declared volatile, the JVM ensures that the latest value written to the field by one thread is visible to all other threads, and all changes to the volatile field are atomic.</p>
+<p>Here&rsquo;s an example of how to declare a volatile field in Scala:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#a6e22e">@volatile</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> count <span style="color:#66d9ef">=</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Note that @volatile is a Scala-specific annotation and is not a standard Java feature. The equivalent in Java would be to use the volatile keyword when declaring the field:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">volatile</span> <span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">;</span>
+</span></span></code></pre></div><p>In general, volatile fields should be used sparingly and only in situations where visibility and atomicity guarantees are important, as access to volatile fields is slower than to non-volatile fields.</p>
+<hr>
+<p>sources:</p>
+<ul>
+<li><a href="https://docs.scala-lang.org/tour/annotations.html">scala doc</a></li>
+<li><a href="">chat gpt</a></li>
+</ul>
+]]></content:encoded></item><item><title>Intro to Scala</title><link>https://blog.yrieix.com/posts/intro-to-scala/</link><pubDate>Sun, 25 Dec 2022 09:39:15 +0000</pubDate><guid>https://blog.yrieix.com/posts/intro-to-scala/</guid><description>Scala: A powerful language for building scalable applications.</description><content:encoded><![CDATA[<p>Scala is a modern, general-purpose programming language that runs on the Java Virtual Machine (JVM). It was first released in 2004 and has gained a lot of popularity among developers due to its concise, expressive syntax and support for both object-oriented and functional programming paradigms.</p>
 <p>If you are new to Scala or are considering learning it, this blog post is for you! We&rsquo;ll start by giving you a brief overview of Scala and why it is a popular language, and then move on to the history and background of Scala. We&rsquo;ll also provide some tips on how to get started with Scala and where to go for further learning.</p>
 <p>So, why is Scala such a hot language right now? Here are a few reasons:</p>
 <ul>
